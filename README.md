@@ -12,7 +12,6 @@ SETUP :
 
 <br>  1. List : dùng để check list ***CONTAINER***
 
-<code>
-			Cách dùng : docker ps 
+
+	Cách dùng : docker ps 
 			
-</code>
