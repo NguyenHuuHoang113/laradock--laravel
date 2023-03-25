@@ -10,8 +10,27 @@ SETUP :
 
 #### DOCUMENT : 
 
-<br>  1. List : dùng để check list ***CONTAINER**
+##### 1.List current running Containers
 <br> Cách dùng : 
 	
 	docker ps 
+
+<br> Tưong tu nhu sau : 	
 			
+##### 2. Close all running Containers
+<br> Cách dùng : 
+
+	docker-compose stop 
+
+###### OR
+
+	docker -compose  
+
+Tuong tư nhu sau : 
+
+##### 3. Delete all existing Containers
+<br> Cach dung : 
+
+	docker-compose down
+
+##### 4. 
