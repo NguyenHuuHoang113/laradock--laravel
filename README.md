@@ -230,3 +230,46 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 		Route::patch($uri, $callback);<cho phép cập nhật một phần của một tài nguyên đã tồn tại>
 		Route::delete($uri, $callback);<cho phép xóa một tài nguyên đã tồn tại>
 		Route::options($uri, $callback);<cho phép lấy thông tin về các tùy chọn được hỗ trợ trên một tài nguyên nhất định>
+
+	Bên cạnh đó , còn có ***"match"*** and ***"any"***
+	<!-- lý thuyết về match  -->
+
+3. **View route** : nếu như bạn cần xem route đang làm việc bạn có thể cùng view route để thực hiện nó : 
+ 
+	<br> Cách dùng :
+
+		Route::view('/URL', 'COMMAND');
+
+	<br> Tương tự như sau : 
+	
+
+
+4. **The route list** : dùng để check list route 
+
+	<br> Cách dùng : 
+
+		php artisan route:list
+
+	Tương tự như sau : 
+
+		D:\welcom>php artisan route:list
+		GET|HEAD   / ................................................................
+		POST       _ignition/execute-solution ...................................... ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController
+		GET|HEAD   _ignition/health-check .......................................... ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
+		POST       _ignition/update-config .......................................... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
+		GET|HEAD   api/user ..........................................................
+		POST       form-submit .......................................................
+		GET|HEAD   sanctum/csrf-cookie ............................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
+
+5. **Named route** : dùng để đặt tên cho route 
+
+	<br> Cách dùng : 
+
+		Route::get('/user/profile', function () {
+		// ...
+		})->name('profile');
+
+	<br> Tương tự như sau : 
+6.**Middleware**
+	Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application.
+
