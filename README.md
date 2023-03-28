@@ -15,7 +15,7 @@ SETUP :
 	
 	docker ps 
 
-<br> Tưong tu nhu sau : 	
+<br> Tương tự như sau : 	
 			
 #### **Close all running Containers**
 <br> Cách dùng : 
@@ -26,7 +26,7 @@ SETUP :
 
 	docker-compose  
 
-<br> Tuong tư nhu sau : 
+<br> Tương tự như sau  : 
 
 	C:\Users\Hoang\laradock> docker-compose stop
 	[+] Running 5/5
@@ -38,11 +38,11 @@ SETUP :
 
 
 #### **Delete all existing Containers**
-<br> Cach dung : 
+<br> Cách dùng : 
 
 	docker-compose down
 
-<br> Tuong tu nhu sau : 
+<br> Tương tự như sau : 
 
 	C:\Users\Hoang\laradock> docker-compose down
 	[+] Running 8/8
@@ -66,27 +66,27 @@ SETUP :
     
 	docker-compose exec {container-name} bash
 
-Vi du :  Nhap  ***MySQL container***
+Ví dụ  :  Nhập  ***MySQL container***
 
 	C:\Users\Hoang\laradock> docker-compose exec mysql bash
 	bash-4.4# exit
 	exit
 
-> **NOTE** : exit dung de thoai khoi ***CONTAINER***
+> **NOTE** : nhập ***exit*** để thoát khỏi  ***CONTAINER***
 #### **Build/Re-build Containers**
 
-Cach dung : 
+Cách dùng : 
 
-Cách 1 : dung de build tat ca .
+Cách 1 : dùng để build tất cả  .
 
 	docker-compose build
 
 
-Cách 2 : dung de build mot ***Container*** ban cần :	
+Cách 2 : dùng để build một  ***Container*** bạn cần :	
 
 	docker-compose build {container-name}
 
-Tuơng tu nhu sau : 
+Tương tự như sau : 
 
 	C:\Users\Hoang\laradock> docker-compose build
 	[+] Building 0.0s (0/0)
@@ -128,11 +128,12 @@ Tuơng tu nhu sau :
 
 
 #### **Start Containers**
-Cach dung : 
+
+<br> Cách dùng : 
 
 	docker-compose start
 
-<br> Tuong tu nhu sau : 
+<br> Tương tự như sau : 
 
 	C:\Users\Hoang\laradock> docker-compose start
 		[+] Running 5/5
@@ -145,17 +146,17 @@ Cach dung :
 
 ## **LARAVEL**
 
-Laravel is a web application framework with expressive, elegant syntax .
+Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 
 #### CREATE A PROJECT :
 
-<br> Cach dung : 
+<br> Cách dùng : 
 
 
 	composer create-project --prefer-dist laravel/laravel <YOURNAME_PROJECT>
 
-<br> Tuong tu nhu sau : 
+<br> Tương tự như sau  : 
 
 	C:\Users\Hoang>composer create-project laravel/laravel example-app
 	Creating a "laravel/laravel" project at "./example-app"
@@ -176,7 +177,56 @@ Laravel is a web application framework with expressive, elegant syntax .
 
 
 > NOTE : php artisan serve là một lệnh của Laravel được sử dụng để khởi động một server phát triển cục bộ để chạy ứng dụng Laravel . 
+***
+## **ROUTING** : 
+
+1.  **Basic Routing** : 
+
+	<br> Cách dùng : 
+
+		Route::get('URL', funtion(){
+			Return ('command');
+		} );
+
+	<br>Tương tư như sau : ở đây tôi muốn hiện thị **Command** :"HELLO LARAVEL" :
+		<br> - Đầu tiên , cần tạo cho một ***[PROJECT](#create-a-project)***.
+		<br> - Tiếp theo , truy cập vào **route** --> **web.php** .
+		<br> - Khai báo route . 
+		<?php
+
+		use Illuminate\Support\Facades\Route;
+
+		/*
+		|--------------------------------------------------------------------------
+		| Web Routes
+		|--------------------------------------------------------------------------
+		|
+		| Here is where you can register web routes for your application. These
+		| routes are loaded by the RouteServiceProvider and all of them will
+		| be assigned to the "web" middleware group. Make something great!
+		|
+		*/
+
+		Route::get('/', function () {
+			return view('welcome');
+		});
+
+		Route::get('/hello', function () {
+			return 'hello laravel';
+		});
 
 
+	<br> - Chạy  ***php artisan serve*** để khởi chạy web
 
-#### CREATE ROUTES : 
+	<!-- hình ảnh  -->
+
+2. **Available Router Methods** : 
+
+	<br>Đây là những ROUTER cho phép bạn được khai báo : 
+
+		Route::get($uri, $callback); <cho phép truy cập một tài nguyên được chỉ định bởi URI>
+		Route::post($uri, $callback);<cho phép tạo mới một tài nguyên mới>
+		Route::put($uri, $callback);<cho phép cập nhật một tài nguyên đã tồn tại>
+		Route::patch($uri, $callback);<cho phép cập nhật một phần của một tài nguyên đã tồn tại>
+		Route::delete($uri, $callback);<cho phép xóa một tài nguyên đã tồn tại>
+		Route::options($uri, $callback);<cho phép lấy thông tin về các tùy chọn được hỗ trợ trên một tài nguyên nhất định>
