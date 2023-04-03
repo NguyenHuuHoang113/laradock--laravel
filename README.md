@@ -213,14 +213,15 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 <br> Cách dùng : 
 
-		Route::get('URL', funtion(){
-			Return ('command');
-		} );
+	Route::get('URL', funtion(){
+		Return ('command');
+	} );
 
 <br>Tương tư như sau : ở đây tôi muốn hiện thị **Command** :"HELLO LARAVEL" :
-		<br> - Đầu tiên , cần tạo cho một ***[PROJECT](#create-a-project)***.
-		<br> - Tiếp theo , truy cập vào **route** --> **web.php** .
-		<br> - Khai báo route . 
+	<br> - Đầu tiên , cần tạo cho một ***[PROJECT](#create-a-project)***.
+	<br> - Tiếp theo , truy cập vào **route** --> **web.php** .
+	<br> - Khai báo route . 
+
 		<?php
 
 		use Illuminate\Support\Facades\Route;
@@ -269,7 +270,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 	
 <br> Cách dùng :
 
-		Route::view('/URL', 'COMMAND');
+	Route::view('/URL', 'COMMAND');
 
 <br> Tương tự như sau : 
 	<br> Đầu tiên : đặt một **New file : hello.blade.php** vào file **resources/views/hello.blade.php** . Để trình bày nội dung muốn xuất hiện : 
@@ -298,9 +299,9 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 #### 4. **The route list** : dùng để check list route 
 <br>
-	 Cách dùng : 
+	Cách dùng : 
 
-		php artisan route:list
+	php artisan route:list
 
 <br>Tương tự như sau : 
 
@@ -318,13 +319,13 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 <br>
 	Cách dùng : 
 
-		php artisan make:middleware <Name_Middleware>
+	php artisan make:middleware <Name_Middleware>
 
-	<br> Tương tự như sau : 
+<br> Tương tự như sau : 
 
-		D:\chaomung> php artisan make:middleware testlaravel
+	D:\chaomung> php artisan make:middleware testlaravel
 
-		INFO  Middleware [D:\chaomung\app/Http/Middleware/testlaravel.php] created successfully.
+	INFO  Middleware [D:\chaomung\app/Http/Middleware/testlaravel.php] created successfully.
 
 <br>
 
@@ -332,12 +333,12 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 <br>
 	Cách dùng : 
 
-		php artisan make:controller <Name_Controller> 
+	php artisan make:controller <Name_Controller> 
 
 	Tương tự như sau : 
 		Ví dụ tạo một cái controller có tên là ***testlaravel*** : 
 
-		D:\chaomung> php artisan make:controller testlaravel
+	D:\chaomung> php artisan make:controller testlaravel
 
 	INFO  Controller [D:\chaomung\app/Http/Controllers/testlaravel.php] created successfully.
 
@@ -372,15 +373,14 @@ Cách dùng :
 
 <br> Cách dùng : 
 
-
 	- Tạo nội dung với HTML :
-			return response('<h1>Hello World</h1>');
+		return response('<h1>Hello World</h1>');
 
 	- Tạo với View : 
-			return view('welcome');
+		return view('welcome');
 
 	- Tạo một response với một redirect : 
-			return redirect('/home');
+		return redirect('/home');
 
 
 ###  **Blade Templates** là một công cụ mạnh mẽ để quản lý các giao diện người dùng trong các ứng dụng web được viết bằng PHP
@@ -390,59 +390,60 @@ Cách dùng :
 
 - If Statements : dùng để đặt điều kiện . 
 
-	<br> Cách dùng :
+<br> Cách dùng :
 
-				các lệnh  @if, @elseif, @else, and @endif .
+	các lệnh  @if, @elseif, @else, and @endif .
 			
-	<br> Tương tự như sau : 
+<br> Tương tự như sau : 
 
-				@if (count($records) === 1)
-					I have one record!
-				@elseif (count($records) > 1)
-					I have multiple records!
-				@else
-					I don't have any records!
-				@endif
-	<br>
+	@if (count($records) === 1)
+		I have one record!
+	@elseif (count($records) > 1)
+		I have multiple records!
+	@else
+		I don't have any records!
+	@endif
+
+<br>
 
 - Authentication Directives: dùng để xác thực người dùng
 
-	<br> Cách dùng : 
+<br> Cách dùng : 
 			
-			dùng @auth and @guest
+	dùng @auth and @guest
 
-	<br>	Tương tự như sau :
+<br>Tương tự như sau :
 
-				@auth
-					// The user is authenticated...
-				@endauth
-				
-				@guest
-					// The user is not authenticated...
-				@endguest
+	@auth
+		// The user is authenticated...
+	@endauth		
+
+	@guest
+		// The user is not authenticated...
+	@endguest
 <br>
 
 - Loop : Blade cung cấp chỉ thực đơn giản của  ***working*** với ***PHP's loop structures***
 
 	<br> Tương tự như sau : 
 
-			@for ($i = 0; $i < 10; $i++)
-				The current value is {{ $i }}
-			@endfor
+	@for ($i = 0; $i < 10; $i++)
+		The current value is {{ $i }}
+	@endfor
 			
-			@foreach ($users as $user)
-				<p>This is user {{ $user->id }}</p>
-			@endforeach
+	@foreach ($users as $user)
+		<p>This is user {{ $user->id }}</p>
+	@endforeach
 			
-			@forelse ($users as $user)
-				<li>{{ $user->name }}</li>
-			@empty
-				<p>No users</p>
-			@endforelse
-			
-			@while (true)
-				<p>I'm looping forever.</p>
-			@endwhile
+	@forelse ($users as $user)
+		<li>{{ $user->name }}</li>
+	@empty
+		<p>No users</p>
+	@endforelse
+		
+	@while (true)
+		<p>I'm looping forever.</p>
+	@endwhile
 
 - Loop Variables :  Trong khi lặp qua một ***foreach*** vòng lặp, một ***$loop*** biến sẽ có sẵn bên trong vòng lặp của bạn .
 	<br> Cách dùng : 
