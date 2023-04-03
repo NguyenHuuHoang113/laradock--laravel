@@ -2,22 +2,50 @@
 
 # LARADOCK - LARAVEL 
 ***
+
+I. [**LARADOCK**](#laradock)
+
+1. [**List current running Containers**](#laradock)
+
+2. [**Close all running Containers**](#close-all-running-containers)
+
+3. [**Delete all existing Containers**](#delete-all-existing-containers)
+
+4. [**Build/Re-build Containers**](#buildre-build-containers)
+
+5. [**Start Containers**](#start-containers)
+
+II. [**LARAVEL**](#laravel)
+- [**CREATE A PROJECT**](#create-a-project)
+- [**ROUTING**](#routing)
+	1. [**Basic Routing**](#1-basic-routing)
+	2. [**Available Router Methods**](#2-available-router-methods)
+	3. [**View route**](#3-view-route--dùng-để-xem-trình-bày-của-bạn)
+	4. [**The route list**](#4-the-route-list--dùng-để-check-list-route)
+- [**MIDDLEWARE**](#middleware-cung-cấp-một-cơ-chế-thuận-tiện-để-kiểm-tra-và-lọc-các-yêu-cầu-http-khi-chúng-nhập-vào-ứng-dụng-của-bạn)
+- [**CONTROLLER**](#controller--một-lớp-php-đại-diện-cho-một-tác-vụ-xử-lý-yêu-cầu-http)
+- [**ARTISAN**](#artisan-là-một-công-cụ-dòng-lệnh-trong-laravel-cho-phép-bạn-tạo-các-task-migrations-models-controllers-và-các-cấu-trúc-khác-một-cách-nhanh-chóng-và-dễ-dàng)
+
+- [**RESPOSE**](#respose--một-thông-điệp-trả-lời-của-máy-chủ-web-cho-client)
+- [**BLADE TEMPLATES**](#blade-templates-là-một-công-cụ-mạnh-mẽ-để-quản-lý-các-giao-diện-người-dùng-trong-các-ứng-dụng-web-được-viết-bằng-php)
+	
+
+
+
 ## LARADOCK 
 
 Laradock :  a full PHP phát triển môi trường của Docker . 
 
-SETUP : 
-
 ### **DOCUMENT** : 
 
-#### **List current running Containers**
+### **List current running Containers**
 <br> Cách dùng : 
 	
 	docker ps 
 
 <br> Tương tự như sau : 	
 			
-#### **Close all running Containers**
+### **Close all running Containers**
 <br> Cách dùng : 
 
 	docker-compose stop 
@@ -73,6 +101,7 @@ Ví dụ  :  Nhập  ***MySQL container***
 	exit
 
 > **NOTE** : nhập ***exit*** để thoát khỏi  ***CONTAINER***
+
 #### **Build/Re-build Containers**
 
 Cách dùng : 
@@ -149,7 +178,7 @@ Tương tự như sau :
 Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 
-#### CREATE A PROJECT :
+### **CREATE A PROJECT** :
 
 <br> Cách dùng : 
 
@@ -178,17 +207,17 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 > NOTE : php artisan serve là một lệnh của Laravel được sử dụng để khởi động một server phát triển cục bộ để chạy ứng dụng Laravel . 
 ***
-## **ROUTING** : 
+### **ROUTING** : 
 
-1.  **Basic Routing** : 
+#### 1.  **Basic Routing** : 
 
-	<br> Cách dùng : 
+<br> Cách dùng : 
 
 		Route::get('URL', funtion(){
 			Return ('command');
 		} );
 
-	<br>Tương tư như sau : ở đây tôi muốn hiện thị **Command** :"HELLO LARAVEL" :
+<br>Tương tư như sau : ở đây tôi muốn hiện thị **Command** :"HELLO LARAVEL" :
 		<br> - Đầu tiên , cần tạo cho một ***[PROJECT](#create-a-project)***.
 		<br> - Tiếp theo , truy cập vào **route** --> **web.php** .
 		<br> - Khai báo route . 
@@ -218,11 +247,15 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 	<br> - Chạy  ***php artisan serve*** để khởi chạy web
 
-	<!-- hình ảnh  -->
+<br>
 
-2. **Available Router Methods** : 
+![hình ảnh ](/123444.png)
 
-	<br>Đây là những ROUTER cho phép bạn được khai báo : 
+<br>
+
+#### 2. **Available Router Methods** : 
+
+<br> Đây là những ROUTER cho phép bạn được khai báo : 
 
 		Route::get($uri, $callback); <cho phép truy cập một tài nguyên được chỉ định bởi URI>
 		Route::post($uri, $callback);<cho phép tạo mới một tài nguyên mới>
@@ -231,39 +264,58 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 		Route::delete($uri, $callback);<cho phép xóa một tài nguyên đã tồn tại>
 		Route::options($uri, $callback);<cho phép lấy thông tin về các tùy chọn được hỗ trợ trên một tài nguyên nhất định>
 
-	Bên cạnh đó , còn có ***"match"*** and ***"any"***
-	<!-- lý thuyết về match  -->
 
-3. **View route** : dùng để xem trình bày của bạn 
-	<br> Cách dùng :
+#### 3. **View route** : dùng để xem trình bày của bạn 
+	
+<br> Cách dùng :
 
 		Route::view('/URL', 'COMMAND');
 
-	<br> Tương tự như sau : 
-	
+<br> Tương tự như sau : 
+	<br> Đầu tiên : đặt một **New file : hello.blade.php** vào file **resources/views/hello.blade.php** . Để trình bày nội dung muốn xuất hiện : 
 
-<!-- hình ảnh  -->
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		<h1>Hello, {{ $name }}!</h1>
+	</body>
+	</html>
 
-4. **The route list** : dùng để check list route 
+  
+<br> Tiếp theo : khai báo ở file routes/web/ . 
 
-	<br> Cách dùng : 
+	Route::get('/hello/{name}', function ($name) {
+		return view('hello', ['name' => $name]);
+	});
+<br> Cuối cùng : chạy lệnh **php artisan serve** vào truy cập trang web đã khởi chạy 
+
+![hình ảnh ](/12131313%20.png)
+
+<br>
+
+#### 4. **The route list** : dùng để check list route 
+<br>
+	 Cách dùng : 
 
 		php artisan route:list
 
-	Tương tự như sau : 
+<br>Tương tự như sau : 
 
 		D:\welcom>php artisan route:list
-		GET|HEAD   / ................................................................
+		GET|HEAD   / ...................................................
 		POST       _ignition/execute-solution ...................................... ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController
 		GET|HEAD   _ignition/health-check .......................................... ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
 		POST       _ignition/update-config .......................................... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
 		GET|HEAD   api/user ..........................................................
 		POST       form-submit .......................................................
 		GET|HEAD   sanctum/csrf-cookie ............................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
+<br>
 
-
-5. **Middleware**: cung cấp một cơ chế thuận tiện để kiểm tra và lọc các yêu cầu HTTP khi chúng nhập vào ứng dụng của bạn
-
+### **Middleware**: cung cấp một cơ chế thuận tiện để kiểm tra và lọc các yêu cầu HTTP khi chúng nhập vào ứng dụng của bạn
+<br>
 	Cách dùng : 
 
 		php artisan make:middleware <Name_Middleware>
@@ -274,8 +326,10 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 		INFO  Middleware [D:\chaomung\app/Http/Middleware/testlaravel.php] created successfully.
 
-6. **Controller** : một lớp PHP đại diện cho một tác vụ xử lý yêu cầu HTTP
+<br>
 
+### **Controller** : một lớp PHP đại diện cho một tác vụ xử lý yêu cầu HTTP
+<br>
 	Cách dùng : 
 
 		php artisan make:controller <Name_Controller> 
@@ -287,61 +341,123 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 	INFO  Controller [D:\chaomung\app/Http/Controllers/testlaravel.php] created successfully.
 
-	<br>
+<br>
 
-7. Artisan là một công cụ dòng lệnh trong Laravel, cho phép bạn tạo các task, migrations, models, controllers và các cấu trúc khác một cách nhanh chóng và dễ dàng . 
+### **Artisan** là một công cụ dòng lệnh trong Laravel, cho phép bạn tạo các task, migrations, models, controllers và các cấu trúc khác một cách nhanh chóng và dễ dàng . 
+<br>
+Cách dùng : 
 
+		Tạo một migration: <php artisan make:migration TenMigration>
 
+		Chạy các migration: <php artisan migrate>
 
+		Tạo một seed: <php artisan make:seed TenSeed>
 
+		Chạy seed: php artisan db:seed
 
-8. Respose :  một thông điệp trả lời của máy chủ web cho client 
+		Tạo một controller: php artisan make:controller TenController
 
-	<br> Cách dùng : 
+		Tạo một model: php artisan make:model TenModel
+
+		Tạo một view: php artisan make:view tenview
+
+		Tạo một job: php artisan make:job TenJob
+
+		Tạo một policy: php artisan make:policy TenPolicy
+		
+
+<br>
+
+###  **Respose** :  một thông điệp trả lời của máy chủ web cho client 
+
+<br> Cách dùng : 
 
 
 	- Tạo nội dung với HTML :
-
 			return response('<h1>Hello World</h1>');
 
 	- Tạo với View : 
-
-
 			return view('welcome');
 
 	- Tạo một response với một redirect : 
-
 			return redirect('/home');
 
 
-9. **Blade Templates** là một công cụ mạnh mẽ để quản lý các giao diện người dùng trong các ứng dụng web được viết bằng PHP
+###  **Blade Templates** là một công cụ mạnh mẽ để quản lý các giao diện người dùng trong các ứng dụng web được viết bằng PHP
 <br>
 Cách dùng : 
 <br>
-	<!-- Switch Statements :cung cấp một cú pháp đơn giản và dễ đọc cho việc tạo các mẫu.
-	Cú pháp : @directive
 
-	<!-- Kế thừa mẫu: cho phép các mẫu được kế thừa, giúp giảm thiểu việc lặp lại mã. -->
+- If Statements : dùng để đặt điều kiện . 
 
-	<!-- If Statements : hỗ trợ các câu lệnh điều kiện và vòng lặp để điều khiển cách hiển thị các phần của giao diện người dùng. -->
+	<br> Cách dùng :
 
-	<!-- Raw PHP : cho phép chèn mã PHP vào các mẫu để tạo các hành động động. --> 
-	
-	@auth
-		// The user is authenticated...
-	@endauth
-	
-	@guest
-		// The user is not authenticated...
-	@endguest
+				các lệnh  @if, @elseif, @else, and @endif .
+			
+	<br> Tương tự như sau : 
+
+				@if (count($records) === 1)
+					I have one record!
+				@elseif (count($records) > 1)
+					I have multiple records!
+				@else
+					I don't have any records!
+				@endif
+	<br>
+
+- Authentication Directives: dùng để xác thực người dùng
+
+	<br> Cách dùng : 
+			
+			dùng @auth and @guest
+
+	<br>	Tương tự như sau :
+
+				@auth
+					// The user is authenticated...
+				@endauth
+				
+				@guest
+					// The user is not authenticated...
+				@endguest
+<br>
+
+- Loop : Blade cung cấp chỉ thực đơn giản của  ***working*** với ***PHP's loop structures***
+
+	<br> Tương tự như sau : 
+
+			@for ($i = 0; $i < 10; $i++)
+				The current value is {{ $i }}
+			@endfor
+			
+			@foreach ($users as $user)
+				<p>This is user {{ $user->id }}</p>
+			@endforeach
+			
+			@forelse ($users as $user)
+				<li>{{ $user->name }}</li>
+			@empty
+				<p>No users</p>
+			@endforelse
+			
+			@while (true)
+				<p>I'm looping forever.</p>
+			@endwhile
+
+- Loop Variables :  Trong khi lặp qua một ***foreach*** vòng lặp, một ***$loop*** biến sẽ có sẵn bên trong vòng lặp của bạn .
+	<br> Cách dùng : 
 
 
-If Statements : 
+	| Property | Description | |
+	|:-------|:------|-------:|
+	| $loop->index  | chứa chỉ số của ***loop*** hiện tại bắt đầu từ 0 |
+	| $loop->iteration | chứa số thứ tự của ***loop*** hiện tại bắt đầu từ 1 |
+	|$loop->first | lần lặp đầu tiên thông qua ***loop***  |  
+	| $loop->last | lần lặp cuối cùng thông qua ***loop***  |
+	|$loop->count|chứa tổng số lần lặp trong ***loop***|
+	|$loop->remaining|chứa số lần lặp còn lại trong ***loop***|
+	|$loop->count|chứa tổng số lần lặp trong ***loop***|
+	|$loop->even|phép lặp chẵn thông qua ***loop***|
+	|$loop->odd |phép lẻ chẵn thông qua ***loop***|
 
-	@if (count($records) === 1)
-		I have one record!
-	@elseif (count($records) > 1)
-		I have multiple records!
-	@else
-		I don't have any records!
-	@endif
+*******
