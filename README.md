@@ -222,28 +222,28 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 	<br> - Tiếp theo , truy cập vào **route** --> **web.php** .
 	<br> - Khai báo route . 
 
-		<?php
+	<?php
 
-		use Illuminate\Support\Facades\Route;
+	use Illuminate\Support\Facades\Route;
 
-		/*
-		|--------------------------------------------------------------------------
-		| Web Routes
-		|--------------------------------------------------------------------------
-		|
-		| Here is where you can register web routes for your application. These
-		| routes are loaded by the RouteServiceProvider and all of them will
-		| be assigned to the "web" middleware group. Make something great!
-		|
-		*/
+	/*
+	|--------------------------------------------------------------------------
+	| Web Routes
+	|--------------------------------------------------------------------------
+	|
+	| Here is where you can register web routes for your application. These
+	| routes are loaded by the RouteServiceProvider and all of them will
+	| be assigned to the "web" middleware group. Make something great!
+	|
+	*/
 
-		Route::get('/', function () {
+	Route::get('/', function () {
 			return view('welcome');
-		});
+	});
 
-		Route::get('/hello', function () {
-			return 'hello laravel';
-		});
+	Route::get('/hello', function () {
+		return 'hello laravel';
+	});
 
 
 	<br> - Chạy  ***php artisan serve*** để khởi chạy web
@@ -258,12 +258,12 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 <br> Đây là những ROUTER cho phép bạn được khai báo : 
 
-		Route::get($uri, $callback); <cho phép truy cập một tài nguyên được chỉ định bởi URI>
-		Route::post($uri, $callback);<cho phép tạo mới một tài nguyên mới>
-		Route::put($uri, $callback);<cho phép cập nhật một tài nguyên đã tồn tại>
-		Route::patch($uri, $callback);<cho phép cập nhật một phần của một tài nguyên đã tồn tại>
-		Route::delete($uri, $callback);<cho phép xóa một tài nguyên đã tồn tại>
-		Route::options($uri, $callback);<cho phép lấy thông tin về các tùy chọn được hỗ trợ trên một tài nguyên nhất định>
+	Route::get($uri, $callback); <cho phép truy cập một tài nguyên được chỉ định bởi URI>
+	Route::post($uri, $callback);<cho phép tạo mới một tài nguyên mới>
+	Route::put($uri, $callback);<cho phép cập nhật một tài nguyên đã tồn tại>
+	Route::patch($uri, $callback);<cho phép cập nhật một phần của một tài nguyên đã tồn tại>
+	Route::delete($uri, $callback);<cho phép xóa một tài nguyên đã tồn tại>
+	Route::options($uri, $callback);<cho phép lấy thông tin về các tùy chọn được hỗ trợ trên một tài nguyên nhất định>
 
 
 #### 3. **View route** : dùng để xem trình bày của bạn 
@@ -305,14 +305,14 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 <br>Tương tự như sau : 
 
-		D:\welcom>php artisan route:list
-		GET|HEAD   / ...................................................
-		POST       _ignition/execute-solution ...................................... ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController
-		GET|HEAD   _ignition/health-check .......................................... ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
-		POST       _ignition/update-config .......................................... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
-		GET|HEAD   api/user ..........................................................
-		POST       form-submit .......................................................
-		GET|HEAD   sanctum/csrf-cookie ............................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
+	D:\welcom>php artisan route:list
+	GET|HEAD   / ...................................................
+	POST       _ignition/execute-solution ...................................... ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController
+	GET|HEAD   _ignition/health-check .......................................... ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
+	POST       _ignition/update-config .......................................... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
+	GET|HEAD   api/user ..........................................................
+	POST       form-submit .......................................................
+	GET|HEAD   sanctum/csrf-cookie ............................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 <br>
 
 ### **Middleware**: cung cấp một cơ chế thuận tiện để kiểm tra và lọc các yêu cầu HTTP khi chúng nhập vào ứng dụng của bạn
@@ -391,38 +391,38 @@ Cách dùng :
 
 - If Statements : dùng để đặt điều kiện . 
 
-<br> Cách dùng :
+	<br> Cách dùng :
 
-	các lệnh  @if, @elseif, @else, and @endif .
-			
-<br> Tương tự như sau : 
+		các lệnh  @if, @elseif, @else, and @endif .
+				
+	<br> Tương tự như sau : 
 
-	@if (count($records) === 1)
-		I have one record!
-	@elseif (count($records) > 1)
-		I have multiple records!
-	@else
-		I don't have any records!
-	@endif
+		@if (count($records) === 1)
+			I have one record!
+		@elseif (count($records) > 1)
+			I have multiple records!
+		@else
+			I don't have any records!
+		@endif
 
-<br>
+	<br>
 
 - Authentication Directives: dùng để xác thực người dùng
 
-<br> Cách dùng : 
-			
-	dùng @auth and @guest
+	<br> Cách dùng : 
+				
+		dùng @auth and @guest
 
-<br>Tương tự như sau :
+	<br>Tương tự như sau :
 
-	@auth
-		// The user is authenticated...
-	@endauth		
+		@auth
+			// The user is authenticated...
+		@endauth		
 
-	@guest
-		// The user is not authenticated...
-	@endguest
-<br>
+		@guest
+			// The user is not authenticated...
+		@endguest
+	<br>
 
 - Loop : Blade cung cấp chỉ thực đơn giản của  ***working*** với ***PHP's loop structures***
 
