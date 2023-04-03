@@ -335,7 +335,8 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 	php artisan make:controller <Name_Controller> 
 
-	Tương tự như sau : 
+<br>Tương tự như sau : 
+
 		Ví dụ tạo một cái controller có tên là ***testlaravel*** : 
 
 	D:\chaomung> php artisan make:controller testlaravel
@@ -348,23 +349,23 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 <br>
 Cách dùng : 
 
-		Tạo một migration: <php artisan make:migration TenMigration>
+	Tạo một migration: <php artisan make:migration TenMigration>
 
-		Chạy các migration: <php artisan migrate>
+	Chạy các migration: <php artisan migrate>
 
-		Tạo một seed: <php artisan make:seed TenSeed>
+	Tạo một seed: <php artisan make:seed TenSeed>
 
-		Chạy seed: php artisan db:seed
+	Chạy seed: <php artisan db:seed>
 
-		Tạo một controller: php artisan make:controller TenController
+	Tạo một controller: <php artisan make:controller TenController>
 
-		Tạo một model: php artisan make:model TenModel
+	Tạo một model: <php artisan make:model TenModel>
 
-		Tạo một view: php artisan make:view tenview
+	Tạo một view: <php artisan make:view tenview>
 
-		Tạo một job: php artisan make:job TenJob
+	Tạo một job: <php artisan make:job TenJob>
 
-		Tạo một policy: php artisan make:policy TenPolicy
+	Tạo một policy: <php artisan make:policy TenPolicy>
 		
 
 <br>
