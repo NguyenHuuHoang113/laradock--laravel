@@ -5,15 +5,16 @@
 
 I. [**LARADOCK**](#laradock)
 
-1. [**List current running Containers**](#laradock)
+- [**List current running Containers**](#laradock)
 
-2. [**Close all running Containers**](#close-all-running-containers)
+- [**Close all running Containers**](#close-all-running-containers)
 
-3. [**Delete all existing Containers**](#delete-all-existing-containers)
+- [**Delete all existing Containers**](#delete-all-existing-containers)
 
-4. [**Build/Re-build Containers**](#buildre-build-containers)
+- [**Enter a container**](#enter-a-container)
+- [**Build/Re-build Containers**](#buildre-build-containers)
 
-5. [**Start Containers**](#start-containers)
+- [**Start Containers**](#start-containers)
 
 II. [**LARAVEL**](#laravel)
 - [**CREATE A PROJECT**](#create-a-project)
@@ -38,14 +39,14 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 
 ### **DOCUMENT** : 
 
-### **List current running Containers**
+### **List current running Containers** : kiểm tra list container đang chạy 
 <br> Cách dùng : 
 	
 	docker ps 
 
 <br> Tương tự như sau : 	
 			
-### **Close all running Containers**
+### **Close all running Containers** : dừng tất cả các ***container*** đang chạy
 <br> Cách dùng : 
 
 	docker-compose stop 
@@ -65,7 +66,7 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 		- Container laradock-docker-in-docker-1  Stopped                                                                  1.4s
 
 
-#### **Delete all existing Containers**
+#### **Delete all existing Containers** : dùng để xóa tất cả ***container*** đang chạy . 
 <br> Cách dùng : 
 
 	docker-compose down
@@ -84,25 +85,25 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 		- Network laradock_frontend              Removed                                                                                                      0.1s
 
 
-#### **Enter a Container**
+#### **Enter a Container**:quá trình truy cập vào một container đang chạy
 
--  First list the currently running containers with docker ps
+-  Đầu tiên liệt kệt vùng chứa **containers** đang chạy với  **docker ps**
 
 - Enter any container using: 
 
-<br>
-    
-	docker-compose exec {container-name} bash
+	<br>
+		
+		docker-compose exec {container-name} bash
 
-Ví dụ  :  Nhập  ***MySQL container***
+	Ví dụ  :  Nhập  ***MySQL container***
 
-	C:\Users\Hoang\laradock> docker-compose exec mysql bash
-	bash-4.4# exit
-	exit
+		C:\Users\Hoang\laradock> docker-compose exec mysql bash
+		bash-4.4# exit
+		exit
 
-> **NOTE** : nhập ***exit*** để thoát khỏi  ***CONTAINER***
+	> **NOTE** : nhập ***exit*** để thoát khỏi  ***CONTAINER***
 
-#### **Build/Re-build Containers**
+#### **Build/Re-build Containers** : build và build lại  các **container** đang được sử dụng 
 
 Cách dùng : 
 
