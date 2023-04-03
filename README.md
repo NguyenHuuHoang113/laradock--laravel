@@ -234,8 +234,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 	Bên cạnh đó , còn có ***"match"*** and ***"any"***
 	<!-- lý thuyết về match  -->
 
-3. **View route** : nếu như bạn cần xem route đang làm việc bạn có thể cùng view route để thực hiện nó : 
- 
+3. **View route** : dùng để xem trình bày của bạn 
 	<br> Cách dùng :
 
 		Route::view('/URL', 'COMMAND');
@@ -243,6 +242,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 	<br> Tương tự như sau : 
 	
 
+<!-- hình ảnh  -->
 
 4. **The route list** : dùng để check list route 
 
@@ -261,15 +261,87 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 		POST       form-submit .......................................................
 		GET|HEAD   sanctum/csrf-cookie ............................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 
-5. **Named route** : dùng để đặt tên cho route 
+
+5. **Middleware**: cung cấp một cơ chế thuận tiện để kiểm tra và lọc các yêu cầu HTTP khi chúng nhập vào ứng dụng của bạn
+
+	Cách dùng : 
+
+		php artisan make:middleware <Name_Middleware>
+
+	<br> Tương tự như sau : 
+
+		D:\chaomung> php artisan make:middleware testlaravel
+
+		INFO  Middleware [D:\chaomung\app/Http/Middleware/testlaravel.php] created successfully.
+
+6. **Controller** : một lớp PHP đại diện cho một tác vụ xử lý yêu cầu HTTP
+
+	Cách dùng : 
+
+		php artisan make:controller <Name_Controller> 
+
+	Tương tự như sau : 
+		Ví dụ tạo một cái controller có tên là ***testlaravel*** : 
+
+		D:\chaomung> php artisan make:controller testlaravel
+
+	INFO  Controller [D:\chaomung\app/Http/Controllers/testlaravel.php] created successfully.
+
+	<br>
+
+7. Artisan là một công cụ dòng lệnh trong Laravel, cho phép bạn tạo các task, migrations, models, controllers và các cấu trúc khác một cách nhanh chóng và dễ dàng . 
+
+
+
+
+
+8. Respose :  một thông điệp trả lời của máy chủ web cho client 
 
 	<br> Cách dùng : 
 
-		Route::get('/user/profile', function () {
-		// ...
-		})->name('profile');
 
-	<br> Tương tự như sau : 
-6.**Middleware**
-	Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application.
+	- Tạo nội dung với HTML :
 
+			return response('<h1>Hello World</h1>');
+
+	- Tạo với View : 
+
+
+			return view('welcome');
+
+	- Tạo một response với một redirect : 
+
+			return redirect('/home');
+
+
+9. **Blade Templates** là một công cụ mạnh mẽ để quản lý các giao diện người dùng trong các ứng dụng web được viết bằng PHP
+<br>
+Cách dùng : 
+<br>
+	<!-- Switch Statements :cung cấp một cú pháp đơn giản và dễ đọc cho việc tạo các mẫu.
+	Cú pháp : @directive
+
+	<!-- Kế thừa mẫu: cho phép các mẫu được kế thừa, giúp giảm thiểu việc lặp lại mã. -->
+
+	<!-- If Statements : hỗ trợ các câu lệnh điều kiện và vòng lặp để điều khiển cách hiển thị các phần của giao diện người dùng. -->
+
+	<!-- Raw PHP : cho phép chèn mã PHP vào các mẫu để tạo các hành động động. --> 
+	
+	@auth
+		// The user is authenticated...
+	@endauth
+	
+	@guest
+		// The user is not authenticated...
+	@endguest
+
+
+If Statements : 
+
+	@if (count($records) === 1)
+		I have one record!
+	@elseif (count($records) > 1)
+		I have multiple records!
+	@else
+		I don't have any records!
+	@endif
