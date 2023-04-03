@@ -39,14 +39,18 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 
 ### **DOCUMENT** : 
 
-### **List current running Containers** : kiểm tra list container đang chạy 
+### **List current running Containers** : kiểm tra list container đang chạy .
 <br> Cách dùng : 
 	
 	docker ps 
 
 <br> Tương tự như sau : 	
-			
-### **Close all running Containers** : dừng tất cả các ***container*** đang chạy
+
+	PS D:\laradock\laradock> docker ps
+	CONTAINER ID   IMAGE               COMMAND                  CREATED      STATUS          PORTS                NAMES
+	714ba024906b   docker101tutorial   "/docker-entrypoint.…"   3 days ago   Up 12 seconds   0.0.0.0:80->80/tcp   docker-tutorial
+				
+### **Close all running Containers** : dừng tất cả các ***container*** đang chạy .
 <br> Cách dùng : 
 
 	docker-compose stop 
@@ -87,19 +91,19 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 
 #### **Enter a Container**:quá trình truy cập vào một container đang chạy
 
--  Đầu tiên liệt kệt vùng chứa **containers** đang chạy với  **docker ps**
+- Đầu tiên liệt kệt vùng chứa **containers** đang chạy với  **docker ps**
 
 - Enter any container using: 
 
-	<br>
+<br>
 		
-		docker-compose exec {container-name} bash
+	docker-compose exec {container-name} bash
 
 	Ví dụ  :  Nhập  ***MySQL container***
 
-		C:\Users\Hoang\laradock> docker-compose exec mysql bash
-		bash-4.4# exit
-		exit
+	C:\Users\Hoang\laradock> docker-compose exec mysql bash
+	bash-4.4# exit
+	exit
 
 	> **NOTE** : nhập ***exit*** để thoát khỏi  ***CONTAINER***
 
@@ -157,7 +161,7 @@ Tương tự như sau :
 
 
 
-#### **Start Containers**
+#### **Start Containers** : khởi động các Contrainer đang có . 
 
 <br> Cách dùng : 
 
@@ -179,7 +183,7 @@ Tương tự như sau :
 Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 
-### **CREATE A PROJECT** :
+### **CREATE A PROJECT** :dùng để tạo file project
 
 <br> Cách dùng : 
 
@@ -210,7 +214,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 ***
 ### **ROUTING** : 
 
-#### 1.  **Basic Routing** : 
+#### 1.  **Basic Routing** : dùng để khai báo địa chỉ URL .
 
 <br> Cách dùng : 
 
@@ -255,7 +259,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 <br>
 
-#### 2. **Available Router Methods** : 
+#### 2. **Available Router Methods** : dùng xác định cách xử lý các yêu cầu HTTP với các phương thức định tuyến có sẵn trong các framework web .
 
 <br> Đây là những ROUTER cho phép bạn được khai báo : 
 
@@ -267,7 +271,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 	Route::options($uri, $callback);<cho phép lấy thông tin về các tùy chọn được hỗ trợ trên một tài nguyên nhất định>
 
 
-#### 3. **View route** : dùng để xem trình bày của bạn 
+#### 3. **View route** : dùng để xem trình bày của bạn .
 	
 <br> Cách dùng :
 
@@ -298,7 +302,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 <br>
 
-#### 4. **The route list** : dùng để check list route 
+#### 4. **The route list** : dùng để check list route .
 <br>
 	Cách dùng : 
 
@@ -316,7 +320,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 	GET|HEAD   sanctum/csrf-cookie ............................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 <br>
 
-### **Middleware**: cung cấp một cơ chế thuận tiện để kiểm tra và lọc các yêu cầu HTTP khi chúng nhập vào ứng dụng của bạn
+### **Middleware**: cung cấp một cơ chế thuận tiện để kiểm tra và lọc các yêu cầu HTTP khi chúng nhập vào ứng dụng của bạn .
 <br>
 	Cách dùng : 
 
@@ -330,7 +334,7 @@ Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 <br>
 
-### **Controller** : một lớp PHP đại diện cho một tác vụ xử lý yêu cầu HTTP
+### **Controller** : một lớp PHP đại diện cho một tác vụ xử lý yêu cầu HTTP .
 <br>
 	Cách dùng : 
 
@@ -371,7 +375,7 @@ Cách dùng :
 
 <br>
 
-###  **Respose** :  một thông điệp trả lời của máy chủ web cho client 
+###  **Respose** :  một thông điệp trả lời của máy chủ web cho client .
 
 <br> Cách dùng : 
 
@@ -385,7 +389,7 @@ Cách dùng :
 		return redirect('/home');
 
 
-###  **Blade Templates** là một công cụ mạnh mẽ để quản lý các giao diện người dùng trong các ứng dụng web được viết bằng PHP
+###  **Blade Templates** là một công cụ mạnh mẽ để quản lý các giao diện người dùng trong các ứng dụng web được viết bằng PHP .
 <br>
 Cách dùng : 
 <br>
