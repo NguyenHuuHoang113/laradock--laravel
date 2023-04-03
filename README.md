@@ -35,7 +35,7 @@ II. [**LARAVEL**](#laravel)
 
 ## LARADOCK 
 
-Laradock :  a full PHP phát triển môi trường của Docker . 
+**Laradock** :  a full ***PHP*** phát triển môi trường của ***Docker*** . 
 
 ### **DOCUMENT** : 
 
@@ -89,7 +89,7 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 		- Network laradock_frontend              Removed                                                                                                      0.1s
 
 
-#### **Enter a Container**:quá trình truy cập vào một container đang chạy
+#### **Enter a Container**:quá trình truy cập vào một container đang chạy . 
 
 - Đầu tiên liệt kệt vùng chứa **containers** đang chạy với  **docker ps**
 
@@ -107,7 +107,7 @@ Laradock :  a full PHP phát triển môi trường của Docker .
 
 	> **NOTE** : nhập ***exit*** để thoát khỏi  ***CONTAINER***
 
-#### **Build/Re-build Containers** : build và build lại  các **container** đang được sử dụng 
+#### **Build/Re-build Containers** : build và build lại  các **container** đang được sử dụng .
 
 Cách dùng : 
 
@@ -183,7 +183,7 @@ Tương tự như sau :
 Laravel : một  web yêu cầu framework với expressive, elegant syntax .
 
 
-### **CREATE A PROJECT** :dùng để tạo file project
+### **CREATE A PROJECT** :dùng để tạo file project .
 
 <br> Cách dùng : 
 
